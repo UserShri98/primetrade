@@ -17,7 +17,9 @@ app.use(cors({
     credentials:true
 }));
 app.use(express.json());
-
+app.get("/",(req,res)=>{
+  res.send("Primetrade API is running");
+});
 app.use("/api/auth",authRoutes);
 app.use("/api/users",userRoutes);
 app.use("/api/tasks",taskRoutes);
