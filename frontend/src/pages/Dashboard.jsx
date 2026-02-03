@@ -58,10 +58,13 @@ const editTaskTitle=async(taskId,newTitle)=>{
   );
 };
 
-  const deleteTask=async(id)=>{
-    await api.delete(`/tasks/${id}`);
-    setTasks(tasks.filter((t)=t._id !== id));
-  };
+ const deleteTask = async (id) => {
+  await api.delete(`/tasks/${id}`);
+
+  setTasks((prevTasks) =>
+    prevTasks.filter((task) => task._id !== id)
+  );
+};
 
   const filteredTasks=tasks.filter((task)=>{
     const matchesSearch=task.title
