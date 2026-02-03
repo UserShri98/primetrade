@@ -58,11 +58,11 @@ const editTaskTitle=async(taskId,newTitle)=>{
   );
 };
 
- const deleteTask = async (id) => {
+ const deleteTask=async(id)=>{
   await api.delete(`/tasks/${id}`);
 
-  setTasks((prevTasks) =>
-    prevTasks.filter((task) => task._id !== id)
+  setTasks((prevTasks)=>
+    prevTasks.filter((task)=>task._id!==id)
   );
 };
 
