@@ -15,6 +15,7 @@ const app=express();
 app.use(cors({
    origin: [
       "http://localhost:5174",
+      "https://primetrade-tau-topaz.vercel.app"
     ],
     credentials:true
 }));
